@@ -1,0 +1,17 @@
+
+
+CREATE COMPUTE MODULE fileQuery_Compute1
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		   CALL CopyEntireMessage();
+		RETURN TRUE;
+	END;
+
+
+	CREATE PROCEDURE CopyEntireMessage() BEGIN
+		DECLARE ref REFERENCE TO InputRoot.XMLNSC.Company;
+		SET OutputRoot.JSON.Data.Company.id =ref.id;
+		SET OutputRoot.JSON.Data.Company.name = ref.name;
+		SET OutputRoot.JSON.Data.Company.salary = ref.salary;
+	END;
+END MODULE;

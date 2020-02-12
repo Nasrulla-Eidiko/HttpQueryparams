@@ -1,0 +1,15 @@
+
+
+CREATE COMPUTE MODULE fileQuery_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		 CALL CopyEntireMessage();
+		RETURN TRUE;
+	END;
+
+
+	CREATE PROCEDURE CopyEntireMessage() BEGIN
+ 		SET OutputLocalEnvironment.Destination.File.Name = 'query5' || '.txt';
+        SET OutputLocalEnvironment.Destination.File.Directory = 'C:\Users\Administrator\Desktop\Input\file';
+	END;
+END MODULE;
