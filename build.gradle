@@ -6,7 +6,7 @@ File currentDir = file(".")
 task mqsicreatebar {
   doLast {
     exec {
-      commandLine 'sh','-c', 'mqsicreatebar -data /home/bandaru/Videos/ -b /home/bandaru/Videos/HttpQueryparams.bar -a HttpQueryparams -p HttpQueryparams'
+      commandLine 'sh','-c', 'mqsicreatebar -data /home/bandaru/.jenkins/workspace/Test -b /home/bandaru/Videos/HttpQueryparams.bar -a HttpQueryparams -p HttpQueryparams'
     }
 }
 }
